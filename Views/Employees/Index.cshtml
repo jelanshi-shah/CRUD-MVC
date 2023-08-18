@@ -1,0 +1,39 @@
+﻿@model List<CRUDMVC.Models.Domain.Employee>
+
+@{
+    int i = 1;
+}
+
+<h1>Employees</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Department</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+      @foreach (var employee in Model)
+        {
+      <tr>
+        <td>@i</td>
+      <td>@employee.Name</td>
+      <td>@employee.Email</td>
+      <td>@employee.Salary</td>
+      <td>@employee.DateOfBirth</td>
+      <td>@employee.Department</td>
+      <td> <a href="Employees/View/@employee.Id">View</a></td>
+      </tr>   
+      i++;
+        }
+       
+  </tbody>
+</table>
